@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - ollama
+
+  db:
+    image: ankane/pgvector
+    environment:
+      POSTGRES_DB: ragchat
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
+  ollama:
+    image: ollama/ollama
+    volumes:
+      - ./models:/root/.ollama/models
+    ports:
+      - "11434:11434"
