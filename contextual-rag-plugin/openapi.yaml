@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Contextual RAG Plugin
+  version: 1.0.0
+paths:
+  /chat:
+    post:
+      summary: Ask the RAG Chatbot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+      responses:
+        '200':
+          description: Response from chatbot
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string

@@ -1,0 +1,9 @@
+{
+  "name": "Contextual RAG Chatbot",
+  "description": "Chat with documents using Contextual RAG pipeline",
+  "api": {
+    "type": "openapi",
+    "url": "/plugins/contextual-rag-chatbot/openapi.yaml"
+  },
+  "version": "1.0.0"
+}
